@@ -1,0 +1,168 @@
+body {
+  font-family: 'Arial Black', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  color: #fff;
+  background-image: url('bilder/flightplane.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.container {
+  width: 80%;
+  margin: auto;
+  padding-top: 50px;
+}
+/* Header Styles */
+header {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px, 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  border-bottom: 0;
+  z-index: 1000;
+}
+header h1 {
+  margin: 0;
+  font-size: 48px;
+}
+/* Navigation Styles */
+nav {
+  background-color: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  padding: 10px 0;
+  border-bottom: 2px solid #000;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  border-bottom: 0;
+  z-index: 1000;
+}
+nav a {
+  float: left;
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+nav a:hover {
+  background-color: #555;
+}
+nav a.active {
+  background-color: #555;
+}
+/* Main Content Styles */
+section {
+  padding-top: 150px;
+}
+/* Form Styles */
+form {
+  max-width: 500px;
+  margin: auto;
+  margin-top: 10%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.form-group {
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #fff;
+}
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="checkbox"] {
+  display: inline-block;
+  margin-right: 5px;
+}
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+/* Services Section Styles */
+.services {
+  margin-top: 50px;
+  text-align: center;
+}
+.service {
+  display: inline-block;
+  width: 30%;
+  margin: 0 15px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.service h3 {
+  margin-top: 0;
+  color: #fff;
+}
+/* Testimonials Section Styles */
+.testimonials {
+  margin-top: 50px;
+  text-align: center;
+}
+.testimonial {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+.testimonial p {
+  margin: 10px 0;
+  color: #fff;
+}
+/* Benefits Section Styles */
+.benefits {
+  margin-top: 50px;
+  text-align: center;
+}
+.benefit {
+  display: inline-block;
+  width: 30%;
+  margin: 0 15px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.benefit h3 {
+  margin-top: 0;
+  color: #fff;
+}
+/* Footer Styles */
+footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 2px solid #222;
+}
