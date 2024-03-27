@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
 </head>
 <body>
   <header>
@@ -284,7 +285,7 @@
 
   <?php
 // Database credentials
-$host = 'localhost';
+$host = '';
 $dbname = '';
 $username = '';
 $password = '';
@@ -300,26 +301,25 @@ try {
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Prepare an SQL statement to insert data into the database
-    $stmt = $pdo->prepare("INSERT INTO  (from_location, to_location, date, passengers, email, country_code, phone) 
-                           VALUES (:from_location, :to_location, :date, :passengers, :email, :country_code, :phone)");
+  // Concatenate country code with phone number
+  $phone = $_POST['countryCode'] . $_POST['phone'];
 
-    // Bind parameters
-    $stmt->bindParam(':from_location', $_POST['from']);
-    $stmt->bindParam(':to_location', $_POST['to']);
-    $stmt->bindParam(':date', $_POST['date']);
-    $stmt->bindParam(':passengers', $_POST['passengers']);
-    $stmt->bindParam(':email', $_POST['email']);
-    $stmt->bindParam(':country_code', $_POST['countryCode']);
-    $stmt->bindParam(':phone', $_POST['phone']);
+  $stmt = $pdo->prepare("INSERT INTO (travelFrom, travelTo, date, passengers, email, phone) 
+                         VALUES (:from_location, :to_location, :date, :passengers, :email, :phone)");
 
-    // Execute the statement
-    try {
-        $stmt->execute();
-        echo "Booking successful!";
-    } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
-    }
+  $stmt->bindParam(':from_location', $_POST['from']);
+  $stmt->bindParam(':to_location', $_POST['to']);
+  $stmt->bindParam(':date', $_POST['date']);
+  $stmt->bindParam(':passengers', $_POST['passengers'], PDO::PARAM_INT);
+  $stmt->bindParam(':email', $_POST['email']);
+  $stmt->bindParam(':phone', $phone);
+
+  try {
+      $stmt->execute();
+      echo "Booking successful!";
+  } catch (PDOException $e) {
+      echo "Error: " . $e->getMessage();
+  }
 }
 ?>
 
