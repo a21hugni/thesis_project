@@ -5,16 +5,19 @@ document.addEventListener('DOMContentLoaded', function() {
       event.preventDefault(); 
 
       if (validateForm()) {
-          const formData = {
-              from: getInputValue('from'), 
-              to: getInputValue('to'), 
-              date: getInputValue('date'),
-              passengers: getInputValue('passengers'),
-              email: getInputValue('email'),
-              phone: getPhoneNumber(),
-              terms: document.getElementById('terms').checked
+          const formData = new FormData();
 
-          };
+          formData.append('from', getInputValue('from'));
+          formData.append('to', getInputValue('to'));
+          formData.append('date', getInputValue('date'));
+          formData.append('passengers', getInputValue('passengers'));
+          formData.append('email', getInputValue('email'));
+          
+          const countryCode = document.getElementById('countryCode').value;
+          const phoneNumber = getInputValue('phone');
+          formData.append('phone', countryCode + phoneNumber);
+
+          formData.append('terms', document.getElementById('terms').checked);
 
           sendData(formData);
       }
@@ -49,30 +52,21 @@ document.addEventListener('DOMContentLoaded', function() {
   function sendData(formData) {
       fetch (window.location.href, {
           method: 'POST', 
-          headers: {
-              'Content-Type': 'application/json'
-          }, 
-          body: JSON.stringify(formData)
+          body: formData
       })
-      console.log('Response from server:', response);
       .then(response => {
-          if (!response.ok) {
-              throw new Error('Failed to submit form data');
-          }
-      
-      return response.json();
-      })
-
-      .then(data => {
-          alert(data.message);
-      
-          console.log(formData);
-          form.reset(); //Change to go back to form again for loop test
-      })
-      .catch(error => {
-          console.error('Error: ', error); 
-          alert('An error has occurred while submitting the form. Please try again later');
-      });
+        if (!response.ok) {
+            throw new Error('Failed to submit form data');
+        }
+        return response.text();
+        })
+        .then(data => {
+            alert(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while submitting the form. Please try again later.');
+        });
   }
 
   function displayError(errorMessage) {

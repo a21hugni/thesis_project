@@ -38,8 +38,7 @@
       </div>
       <div class="form-group">
         <label for="passengers">Passengers:</label>
-        <select id="passengers" name="passengers" required>
-          <option value="">Select</option>
+        <select id="passengers" name="passengers" placeholder="Select" required>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -279,47 +278,52 @@
       <label for="terms">I agree to the terms and conditions</label>
     </div>
     <div class="form-group">
-      <input type="submit" value="Book Now!">
+      <input type="submit" id="submitButton" value="Book Now!">
     </div>
   </form>
 
-  <?php
+<?php
 // Database credentials
-$host = '';
-$dbname = '';
-$username = '';
-$password = '';
+  $host = '';
+  $dbname = '';
+  $username = '';
+  $password = '';
 
-// Establish database connection
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    // Set the PDO error mode to exception
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Database connection failed: " . $e->getMessage());
-}
-
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Concatenate country code with phone number
-  $phone = $_POST['countryCode'] . $_POST['phone'];
-
-  $stmt = $pdo->prepare("INSERT INTO (travelFrom, travelTo, date, passengers, email, phone) 
-                         VALUES (:from_location, :to_location, :date, :passengers, :email, :phone)");
-
-  $stmt->bindParam(':from_location', $_POST['from']);
-  $stmt->bindParam(':to_location', $_POST['to']);
-  $stmt->bindParam(':date', $_POST['date']);
-  $stmt->bindParam(':passengers', $_POST['passengers'], PDO::PARAM_INT);
-  $stmt->bindParam(':email', $_POST['email']);
-  $stmt->bindParam(':phone', $phone);
-
+  // Establish database connection
   try {
-      $stmt->execute();
-      echo "Booking successful!";
+      $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+      // Set the PDO error mode to exception
+      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   } catch (PDOException $e) {
-      echo "Error: " . $e->getMessage();
+      die("Database connection failed: " . $e->getMessage());
   }
+
+  // Check if the form is submitted
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $from = $_POST['from'];
+    $to = $_POST['to'];
+    $date = $_POST['date'];
+    $passengers = $_POST['passengers'];
+    $email = $_POST['email'];
+    $phone =$_POST['countryCode'].$_POST['phone'];
+
+    $stmt = $pdo->prepare("INSERT INTO formData (travelFrom, travelTo, date, passengers, email, phone) 
+                          VALUES (:from_location, :to_location, :date, :passengers, :email, :phone)");
+
+    $stmt->bindParam(':from_location', $from);
+    $stmt->bindParam(':to_location', $to);
+    $stmt->bindParam(':date', $date);
+    $stmt->bindParam(':passengers', $passengers, PDO::PARAM_INT);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':phone', $phone);
+
+    try {
+        $stmt->execute();
+        echo "Booking successful!";
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+      }
 }
 ?>
 
