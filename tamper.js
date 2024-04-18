@@ -11,6 +11,7 @@
 // @grant        GM_setValue
 // ==/UserScript==
 
+//Random seed
 function jsf32(a, b, c, d) {
   a |= 0; b |= 0; c |= 0; d |= 0;
   var t = a - (b << 23 | b >>> 9) | 0;
@@ -169,5 +170,6 @@ var origRandom = Math.random;
         }
     }
 
+    //Start the loop
     runLoop();
 })();
