@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +38,8 @@
       </div>
       <div class="form-group">
         <label for="passengers">Passengers:</label>
-        <select id="passengers" name="passengers" placeholder="Select" required>
+        <select id="passengers" name="passengers" required>
+          <option value="">Select number of passengers</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -53,6 +54,7 @@
       <div class="form-group">
         <label for="countryCode">Country code:</label>
         <select name="countryCode" id="countryCode" required>
+            <option value="">Select a country code</option>
             <option data-countryCode="DZ" value="213">Algeria (+213)</option>
             <option data-countryCode="AD" value="376">Andorra (+376)</option>
             <option data-countryCode="AO" value="244">Angola (+244)</option>
