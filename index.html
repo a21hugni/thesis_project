@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="typeS.js"></script>
 </head>
 <body>
   <header>
@@ -19,7 +21,7 @@
   </nav>
 
   <div class="container">
-    <form id="bookingForm" action="#" method="POST">
+    <form id="bookingForm" action="db.php" method="POST">
       <h2>Book Your Dream Flight Now!</h2>
       <p>Enter your details below to secure your seat.</p>
       <div class="form-group">
@@ -37,7 +39,7 @@
       <div class="form-group">
         <label for="passengers">Passengers:</label>
         <select id="passengers" name="passengers" required>
-          <option value="">Select</option>
+          <option value="">Select number of passengers</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -52,6 +54,7 @@
       <div class="form-group">
         <label for="countryCode">Country code:</label>
         <select name="countryCode" id="countryCode" required>
+            <option value="">Select a country code</option>
             <option data-countryCode="DZ" value="213">Algeria (+213)</option>
             <option data-countryCode="AD" value="376">Andorra (+376)</option>
             <option data-countryCode="AO" value="244">Angola (+244)</option>
@@ -277,7 +280,7 @@
       <label for="terms">I agree to the terms and conditions</label>
     </div>
     <div class="form-group">
-      <input type="submit" value="Book Now!">
+      <input type="submit" id="submitButton" value="Book Now!">
     </div>
   </form>
 
