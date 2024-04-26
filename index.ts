@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.text();
         })
         .then(data => {
-            alert(data);
-            //form.reset(); //Change to go back to form again for loop test
+           const reset = document.getElementById("bookingForm") as HTMLFormElement;
+           reset.reset();
         })
         .catch(error => {
             console.error('Error: ', error);

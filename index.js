@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function sendData(formData) {
-      fetch (window.location.href, {
+      fetch ('db.php', {
           method: 'POST', 
           body: formData
       })
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return response.text();
         })
         .then(data => {
-            alert(data);
+            document.getElementById('bookingForm').reset();
         })
         .catch(error => {
             console.error('Error:', error);
