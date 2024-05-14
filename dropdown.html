@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Luxury Flights</h1>
+  </header>
+
+  <nav>
+    <a href="#" class="active">Home</a>
+    <a href="#services">Services</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#benefits">Benefits</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <form id="dropdownForm" action="dropdown.php" method="POST">
+      <h2>Book Your Dream Flight Now!</h2>
+
+  <div class="form-group">
+    <label for="food">Select your luxury food item:</label>
+    <select id="food" name="food">
+      <option value="caviar">Caviar</option>
+      <option value="lobster">Lobster Thermidor</option>
+      <option value="filet">Filet Mignon</option>
+      <option value="sushi">Sushi Platter</option>
+      <option value="truffles">Truffle Risotto</option>
+      <option value="champagne">Champagne and Canapés</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="allergy">Select your allergy:</label>
+    <select id="allergy" name="allergy">
+      <option value="none">None</option>
+      <option value="nuts">Nuts</option>
+      <option value="dairy">Dairy</option>
+      <option value="eggs">Eggs</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="gender">Select your gender:</label>
+    <select id="gender" name="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="age">Select your age range:</label>
+    <select id="age" name="age">
+      <option value="under18">Under 18</option>
+      <option value="18to30">18 to 30</option>
+      <option value="31to50">31 to 50</option>
+      <option value="over50">Over 50</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="education">Select your education level:</label>
+    <select id="education" name="education">
+      <option value="highschool">High School</option>
+      <option value="associate">Associate Degree</option>
+      <option value="bachelor">Bachelor's Degree</option>
+      <option value="master">Master's Degree</option>
+      <option value="phd">PhD</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="employment">Select your employment status:</label>
+    <select id="employment" name="employment">
+      <option value="employed">Employed</option>
+      <option value="unemployed">Unemployed</option>
+      <option value="student">Student</option>
+      <option value="retired">Retired</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+
+      <div class="form-group">
+        <input type="submit" id="submitButton" value="Book Now!" onclick="location.href='textfield.html';">
+      </div>
+  </form>
+
+  <div id="services" class="services">
+    <h2>Why Choose Us?</h2>
+    <div class="service">
+      <h3>Exclusive Destinations</h3>
+      <p>Experience luxury with our handpicked selection of elite destinations.</p>
+    </div>
+    <div class="service">
+      <h3>Personalized Service</h3>
+      <p>Indulge in personalized service tailored to your every need.</p>
+    </div>
+    <div class="service">
+      <h3>Elite Aircraft</h3>
+      <p>Travel in style and comfort aboard our fleet of premium aircraft.</p>
+    </div>
+  </div>
+
+  <div id="testimonials" class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">
+      <p>"Luxury Flights made our journey unforgettable. Highly recommended!"</p>
+      <p>- John Smith</p>
+    </div>
+    <div class="testimonial">
+      <p>"The epitome of luxury travel. Impeccable service from start to finish."</p>
+      <p>- Emily Johnson</p>
+    </div>
+  </div>
+
+  <div id="benefits" class="benefits">
+    <h2>Experience the Luxury</h2>
+    <div class="benefit">
+      <h3>Personal Concierge</h3>
+      <p>Enjoy the convenience of a dedicated concierge for all your travel needs.</p>
+    </div>
+    <div class="benefit">
+      <h3>Priority Boarding</h3>
+      <p>Relax in the knowledge that your journey begins with priority boarding.</p>
+    </div>
+    <div class="benefit">
+      <h3>Luxury Lounges</h3>
+      <p>Unwind in our exclusive airport lounges before your flight.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Contact us at: info@luxuryflights.com | +1 (123) 456-7890</p>
+</footer>
+</body>
+</html>
