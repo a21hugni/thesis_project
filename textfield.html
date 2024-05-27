@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
-  <script src="index.js"></script>
+  <script src="typeS.js"></script>
 </head>
 <body>
   <header>
@@ -21,41 +21,41 @@
   </nav>
 
   <div class="container">
-    <form id="textFieldForm" action="textField.php" method="POST">
+    <form id="textFieldForm" action="db.php" method="POST">
       <h2>Book Your Dream Flight Now!</h2>
     
       <div class="form-group">
         <label for="past">Any past experience with us?</label>
-        <input type="text" id="past" name="past">
+        <input type="text" id="past" name="past" required>
       </div>
     
       <div class="form-group">
         <label for="needs">Any special needs?</label>
-        <input type="text" id="needs" name="needs">
+        <input type="text" id="needs" name="needs" required>
       </div>
     
       <div class="form-group">
         <label for="sweets">Favorite type of sweets?</label>
-        <input type="text" id="sweets" name="sweets">
+        <input type="text" id="sweets" name="sweets" required>
       </div>
     
       <div class="form-group">
         <label for="sleep">Perfect sleeping conditions on an airplane?</label>
-        <input type="text" id="sleep" name="sleep">
+        <input type="text" id="sleep" name="sleep" required>
       </div>
     
       <div class="form-group">
         <label for="space">Need any extra space?</label>
-        <input type="text" id="space" name="space">
+        <input type="text" id="space" name="space" required>
       </div>
     
       <div class="form-group">
         <label for="anything">Anything else?</label>
-        <input type="text" id="anything" name="anything">
+        <input type="text" id="anything" name="anything" required>
       </div>
     
       <div class="form-group">
-        <input type="submit" id="submitButton" value="Book Now!" onclick="location.href='index.html';">
+        <input type="submit" id="submitButton3" value="Book Now!" onclick="location.href='index.html';">
       </div>
     </form>
     
